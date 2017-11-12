@@ -12,6 +12,51 @@ import {
     View
 } from 'react-native';
 
+import PropsComponent from './PropsComponent';
+
+export default class setup extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <PropsComponent
+                    //name="dryseed"
+                    age={22}
+                    sex='男'
+                />
+            </View>
+        );
+    }
+}
+
+/*import ExportImportComponent, {name, age, sex, sum} from './ExportImportComponent';
+
+export default class setup extends Component {
+    constructor(props) {
+        super(props);
+        this.state = ({
+            result: ""
+        })
+    }
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={{fontSize: 20}}>名字：{name}</Text>
+                <Text style={{fontSize: 20}}>年龄：{age}</Text>
+                <Text style={{fontSize: 20}}>性别：{sex}</Text>
+                <Text style={{fontSize: 20}}
+                      onPress={() => {
+                          var result = sum(2, 3);
+                          this.setState({
+                              result: result
+                          });
+                      }}
+                >2+3={this.state.result}</Text>
+            </View>
+        );
+    }
+}*/
+
 /*import LifecycleComponent from './LifecycleComponent';
 
 export default class setup extends Component {
@@ -40,35 +85,6 @@ export default class setup extends Component {
         );
     }
 }*/
-
-import ExportImportComponent, {name, age, sex, sum} from './ExportImportComponent';
-
-export default class setup extends Component {
-    constructor(props) {
-        super(props);
-        this.state = ({
-            result: ""
-        })
-    }
-
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text style={{fontSize: 20}}>名字：{name}</Text>
-                <Text style={{fontSize: 20}}>年龄：{age}</Text>
-                <Text style={{fontSize: 20}}>性别：{sex}</Text>
-                <Text style={{fontSize: 20}}
-                      onPress={() => {
-                          var result = sum(2, 3);
-                          this.setState({
-                              result: result
-                          });
-                      }}
-                >2+3={this.state.result}</Text>
-            </View>
-        );
-    }
-}
 
 const styles = StyleSheet.create({
     container: {
