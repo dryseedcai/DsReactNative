@@ -12,7 +12,7 @@ import {
     View
 } from 'react-native';
 
-import LifecycleComponent from './LifecycleComponent';
+/*import LifecycleComponent from './LifecycleComponent';
 
 export default class setup extends Component {
     constructor(props) {
@@ -36,6 +36,35 @@ export default class setup extends Component {
                     }}
                 >{text}</Text>
                 {view}
+            </View>
+        );
+    }
+}*/
+
+import ExportImportComponent, {name, age, sex, sum} from './ExportImportComponent';
+
+export default class setup extends Component {
+    constructor(props) {
+        super(props);
+        this.state = ({
+            result: ""
+        })
+    }
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={{fontSize: 20}}>名字：{name}</Text>
+                <Text style={{fontSize: 20}}>年龄：{age}</Text>
+                <Text style={{fontSize: 20}}>性别：{sex}</Text>
+                <Text style={{fontSize: 20}}
+                      onPress={() => {
+                          var result = sum(2, 3);
+                          this.setState({
+                              result: result
+                          });
+                      }}
+                >2+3={this.state.result}</Text>
             </View>
         );
     }
